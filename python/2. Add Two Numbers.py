@@ -5,14 +5,17 @@ class ListNode:
         self.val = val
         self.next = next
 
+# 243 
 def createList(arr: List[int]) -> Optional[ListNode]:
     prev = None
     head = None
-    for i in range(len(arr)):
-        if i == 0:
-            head = prev = ListNode(arr[0])
-        else:
-            prev = ListNode(arr[i], prev)
+    for i in arr:
+        node = ListNode(i)
+        if not head:
+            head = node
+        if prev:
+            prev.next = node
+        prev = node
     return head
 
 def addTwoNumbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
