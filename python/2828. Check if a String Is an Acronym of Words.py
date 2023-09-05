@@ -9,7 +9,8 @@ def isAcronym(words: List[str], s: str) -> bool:
             return False
     return True
 
-print(isAcronym(words = ["alice","bob","charlie"], s = "abc"))
-print(isAcronym(words = ["an","apple"], s = "a"))
-print(isAcronym(words = ["an","apple"], s = "aa"))
-print(isAcronym(words = ["an"], s = "aa"))
+if __name__ == "__main__":
+    print(isAcronym(words = ["alice","bob","charlie"], s = "abc"))
+    print(isAcronym(words = ["an","apple"], s = "a"))
+    print(isAcronym(words = ["an","apple"], s = "aa"))
+    print(isAcronym(words = ["an"], s = "aa"))

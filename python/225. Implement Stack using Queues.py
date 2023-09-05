@@ -59,18 +59,20 @@ class MyStackWithDeque:
     def empty(self) -> bool:
         return len(self.stack) == 0
 
-myStack = MyStackWithDeque()
-myStack.push(1)
-myStack.push(2)
-print(myStack.top()) # return 2
-print(myStack.pop()) # return 2
-print(myStack.empty()) # return False
-print('====================================')
-myStack = MyStackWithDeque()
-myStack.push(1)
-myStack.push(2)
-myStack.push(3)
-print(myStack.pop())   # 3
-print(myStack.pop())   # 2
-print(myStack.pop())   # 1
-print(myStack.empty()) # True
+if __name__ == "__main__":
+    myStack = MyStackWithDeque()
+    myStack.push(1)
+    myStack.push(2)
+    print(myStack.top()) # return 2
+    print(myStack.pop()) # return 2
+    print(myStack.empty()) # return False
+    print('====================================')
+    myStack = MyStackWithDeque()
+    myStack.push(1)
+    myStack.push(2)
+    myStack.push(3)
+    print(myStack.pop())   # 3
+    print(myStack.pop())   # 2
+    print(myStack.pop())   # 1
+    print(myStack.empty()) # True
+    

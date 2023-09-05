@@ -11,5 +11,6 @@ def countBits(n: int) -> List[int]:
         ans.append(sum)
     return ans
 
-print(countBits(10))
-print([0,1,1,2,1,2,2,3,1,2,2])
+if __name__ == "__main__":
+    print(countBits(10))
+    print([0,1,1,2,1,2,2,3,1,2,2])

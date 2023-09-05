@@ -36,10 +36,11 @@ def addTwoNumbers(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[Li
         current = current.next
     return head.next
 
-l1 = createList([2,4,3]) # 342
-l2 = createList([5,6,4]) # 465
-l3 = addTwoNumbers(l1, l2) # expected 807
+if __name__ == "__main__":
+    l1 = createList([2,4,3]) # 342
+    l2 = createList([5,6,4]) # 465
+    l3 = addTwoNumbers(l1, l2) # expected 807
 
-while l3:
-    print(l3.val)
-    l3 = l3.next
+    while l3:
+        print(l3.val)
+        l3 = l3.next

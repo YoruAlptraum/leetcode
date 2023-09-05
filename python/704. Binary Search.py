@@ -28,8 +28,10 @@ def search2(nums: List[int], target: int) -> int:
             l = mid +1
     return -1
 
-print(search(nums = [-1,0,3,5,9,12], target = 9)) # expected 4
-print(search(nums = [-1,0,3,5,9,12], target = 2)) # expected -1
-print(search2(nums = [-1,0,3,5,9,12], target = 9)) # expected 4
-print(search2(nums = [-1,0,3,5,9,12], target = 2)) # expected -1
-print(bisect.bisect_left([-1,0,3,5,9,12], 2))
+if __name__ == "__main__":
+    print(search(nums = [-1,0,3,5,9,12], target = 9)) # expected 4
+    print(search(nums = [-1,0,3,5,9,12], target = 2)) # expected -1
+    print(search2(nums = [-1,0,3,5,9,12], target = 9)) # expected 4
+    print(search2(nums = [-1,0,3,5,9,12], target = 2)) # expected -1
+    print(bisect.bisect_left([-1,0,3,5,9,12], 2))
+    

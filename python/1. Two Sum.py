@@ -7,4 +7,5 @@ def twoSum(nums: List[int], target: int) -> List[int]:
             return [i,dic[nums[i]]]
         dic[target-nums[i]] = i
 
-print(twoSum(nums = [2,7,11,15], target = 9))
+if __name__ == "__main__":
+    print(twoSum(nums = [2,7,11,15], target = 9))

@@ -20,10 +20,11 @@ def minimumReplacement(nums: List[int]) -> int:
         prev = nums[i]
     return rep
 
-print('expected 20 |', minimumReplacement([1,13,15,2,5,14,12,17]))
-print('expected  6 |', minimumReplacement([12,9,7,6]))
-print('expected  2 |', minimumReplacement([3,9,3]))
-print('expected  2 |', minimumReplacement([9,3]))
-print('expected  2 |', minimumReplacement([9,4]))
-print('expected  0 |', minimumReplacement([1,2,3,4,5]))
-print('expected  0 |', minimumReplacement([1]))
+if __name__ == "__main__":
+    print('expected 20 |', minimumReplacement([1,13,15,2,5,14,12,17]))
+    print('expected  6 |', minimumReplacement([12,9,7,6]))
+    print('expected  2 |', minimumReplacement([3,9,3]))
+    print('expected  2 |', minimumReplacement([9,3]))
+    print('expected  2 |', minimumReplacement([9,4]))
+    print('expected  0 |', minimumReplacement([1,2,3,4,5]))
+    print('expected  0 |', minimumReplacement([1]))
