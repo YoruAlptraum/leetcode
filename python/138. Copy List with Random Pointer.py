@@ -15,10 +15,11 @@ def makeList(arr):
         cur.next = Node(i[0],None)
         nodes.append(cur.next)
         cur = cur.next
-    cur = dummy
+    cur = dummy.next
     for i in arr:
-        if cur.random:
-            cur.random = dummy
+        if i[1] != None:
+            cur.random = nodes[i[1]]
+        cur = cur.next
 
     return dummy.next
 
@@ -43,7 +44,12 @@ def copyRandomList(head: 'Optional[Node]') -> 'Optional[Node]':
 if __name__ == "__main__":
     head = makeList([[7,None],[13,0],[11,4],[10,2],[1,0]])
     ansH = copyRandomList(head)
+    final = []
     while ansH:
-        print(ansH.val, ansH.random)
+        if ansH.random:
+            final.append([ansH.val, ansH.random.val])
+        else:
+            final.append([ansH.val, ansH.random])
         ansH = ansH.next
+    print(final)
     
