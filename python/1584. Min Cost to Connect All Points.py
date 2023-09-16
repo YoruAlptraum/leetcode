@@ -11,13 +11,19 @@ def minCostConnectPoints(points: List[List[int]]) -> int:
             edges.append([manhattan_distance(points[i],points[j]),i,j])
     edges.sort() # sort edges
     
-    seen = set()
+    parent = list(range(plen))
+    def search(x: int):
+        if x != parent[x]:
+            return search(parent[x])
+        return x
+
     ans = 0
     for dist, i, j in edges:
-        if i not in seen or j not in seen:
+        p1 = search(i)
+        p2 = search(j)
+        if p1 != p2:
             ans += dist
-            seen.add(i)
-            seen.add(j)
+            parent[p1] = p2
     return ans
 
 if __name__ == "__main__":
