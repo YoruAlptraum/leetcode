@@ -23,6 +23,26 @@ class MyHashMap:
             self.ks.pop(ind)
             self.vs.pop(ind)
 
+class MyHashMap2:
+
+    def __init__(self):
+        self.m = [-1] * 1000001
+
+    def put(self, key: int, value: int) -> None:
+        self.m[key] = value
+
+    def get(self, key: int) -> int:
+        return self.m[key]
+
+    def remove(self, key: int) -> None:
+        self.m[key] = -1
+
+
+# Your MyHashMap object will be instantiated and called as such:
+# obj = MyHashMap()
+# obj.put(key,value)
+# param_2 = obj.get(key)
+# obj.remove(key)
 # Your MyHashMap object will be instantiated and called as such:
 # obj = MyHashMap()
 # obj.put(key,value)
@@ -42,7 +62,7 @@ if __name__ == "__main__":
             method_name = c[0][i]
             args = c[1][i]
             if method_name == "MyHashMap":
-                obj = MyHashMap()
+                obj = MyHashMap2()
                 ans.append(None)
             elif method_name == "put":
                 ans.append(obj.put(*args))
