@@ -1,3 +1,5 @@
+# WIP
+
 from typing import List
 
 def minimumReplacement(nums: List[int]) -> int:
@@ -21,10 +23,14 @@ def minimumReplacement(nums: List[int]) -> int:
     return rep
 
 if __name__ == "__main__":
-    print('expected 20 |', minimumReplacement([1,13,15,2,5,14,12,17]))
-    print('expected  6 |', minimumReplacement([12,9,7,6]))
-    print('expected  2 |', minimumReplacement([3,9,3]))
-    print('expected  2 |', minimumReplacement([9,3]))
-    print('expected  2 |', minimumReplacement([9,4]))
-    print('expected  0 |', minimumReplacement([1,2,3,4,5]))
-    print('expected  0 |', minimumReplacement([1]))
+    cases = [
+        [[1,13,15,2,5,14,12,17],20],
+        [[12,9,7,6],6],
+        [[3,9,3],2],
+        [[9,3],2],
+        [[9,4],2],
+        [[1,2,3,4,5],0],
+        [[1],0]
+    ]
+    for case in cases:
+        print(minimumReplacement(case[0]),'|',case[1])
