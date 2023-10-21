@@ -17,26 +17,24 @@ def backspaceCompare(s: str, t: str) -> bool:
 # two pointers approach for O(1) space
 def backspaceCompare2(s: str, t: str) -> bool:
     ls, lt = len(s)-1, len(t)-1
-    bs, bt = 0, 0
+
+    def updateCount(list: str, n: int) -> int:
+        counter = 0
+        while n >= 0:
+            if list[n] == '#':
+                counter += 1
+                n -= 1
+            elif counter > 0:
+                counter -= 1
+                n -= 1
+            else:
+                break
+        return n
+
     while ls >=0 or lt>=0:
-        while ls >= 0:
-            if s[ls] == '#':
-                bs += 1
-                ls -= 1
-            elif bs > 0:
-                bs -= 1
-                ls -= 1
-            else:
-                break
-        while lt >= 0:
-            if t[lt] == '#':
-                bt += 1
-                lt -= 1
-            elif bt > 0:
-                bt -= 1
-                lt -= 1
-            else:
-                break
+        ls = updateCount(s,ls)
+        lt = updateCount(t,lt)
+
         # if both are negative it means they are both empty
         if lt < 0 and ls < 0:
             break
@@ -66,6 +64,6 @@ if __name__ == "__main__":
     ]
     
     for c in cases:
-        print(backspaceCompare2(c[0],c[1]), backspaceCompare(c[0],c[1]))
+        print('pass' if backspaceCompare2(c[0],c[1]) == backspaceCompare(c[0],c[1]) else 'fail')
 
 
