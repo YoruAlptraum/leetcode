@@ -1,4 +1,5 @@
 from typing import List
+from collections import Counter
 
 # easiest straight forward approach
 def countKDifference(nums: List[int], k: int) -> int:
@@ -12,12 +13,7 @@ def countKDifference(nums: List[int], k: int) -> int:
 
 def countKDifference2(nums: List[int], k: int) -> int:
     ans = 0
-    dic = {}
-    for i in nums:
-        if i in dic:
-            dic[i] += 1
-        else:
-            dic[i] = 1
+    dic = Counter(nums)
     for i in nums:
         x = i-k
         if x in dic:
